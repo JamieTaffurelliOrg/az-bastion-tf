@@ -88,7 +88,17 @@ resource "azurerm_monitor_diagnostic_setting" "bastion_diagnostics" {
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.logs.id
 
   log {
-    category = "BastionAuditEvent"
+    category = "BastionAuditLogs"
+    enabled  = true
+
+    retention_policy {
+      enabled = true
+      days    = 365
+    }
+  }
+
+  metric {
+    category = "AllMetrics"
     enabled  = true
 
     retention_policy {
