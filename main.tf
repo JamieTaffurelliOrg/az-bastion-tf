@@ -21,6 +21,7 @@ resource "azurerm_monitor_diagnostic_setting" "public_ip_diagnostics" {
 
   log {
     category = "DDoSProtectionNotifications"
+    enabled  = true
 
     retention_policy {
       enabled = true
@@ -30,6 +31,7 @@ resource "azurerm_monitor_diagnostic_setting" "public_ip_diagnostics" {
 
   log {
     category = "DDoSMitigationFlowLogs"
+    enabled  = true
 
     retention_policy {
       enabled = true
@@ -39,6 +41,7 @@ resource "azurerm_monitor_diagnostic_setting" "public_ip_diagnostics" {
 
   log {
     category = "DDoSMitigationReports"
+    enabled  = true
 
     retention_policy {
       enabled = true
