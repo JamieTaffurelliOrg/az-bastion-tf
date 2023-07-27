@@ -82,14 +82,9 @@ variable "scale_units" {
   description = "Number of scale units of the bastion host"
 }
 
-variable "virtual_network_name" {
+variable "subnet_id" {
   type        = string
-  description = "Virtual network of Bastion host"
-}
-
-variable "virtual_network_resource_group_name" {
-  type        = string
-  description = "Virtual network resource group name"
+  description = "Resource ID of subnet to deploy bastion host to"
 }
 
 variable "log_analytics_workspace_name" {
