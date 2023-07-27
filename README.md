@@ -28,7 +28,6 @@ No modules.
 | [azurerm_public_ip.bastion_public_ip](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
 | [azurerm_log_analytics_workspace.logs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/log_analytics_workspace) | data source |
 | [azurerm_public_ip_prefix.ip_prefix](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/public_ip_prefix) | data source |
-| [azurerm_subnet.bastion_subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
 
 ## Inputs
 
@@ -50,10 +49,9 @@ No modules.
 | <a name="input_scale_units"></a> [scale\_units](#input\_scale\_units) | Number of scale units of the bastion host | `number` | `2` | no |
 | <a name="input_shareable_link_enabled"></a> [shareable\_link\_enabled](#input\_shareable\_link\_enabled) | Enable shareable link, require standard sku | `bool` | `null` | no |
 | <a name="input_sku"></a> [sku](#input\_sku) | Sku of Bastion host, basic or standard | `string` | `"Basic"` | no |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Resource ID of subnet to deploy bastion host to | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply | `map(string)` | n/a | yes |
 | <a name="input_tunneling_enabled"></a> [tunneling\_enabled](#input\_tunneling\_enabled) | Enable tunneling, require standard sku | `bool` | `null` | no |
-| <a name="input_virtual_network_name"></a> [virtual\_network\_name](#input\_virtual\_network\_name) | Virtual network of Bastion host | `string` | n/a | yes |
-| <a name="input_virtual_network_resource_group_name"></a> [virtual\_network\_resource\_group\_name](#input\_virtual\_network\_resource\_group\_name) | Virtual network resource group name | `string` | n/a | yes |
 
 ## Outputs
 
