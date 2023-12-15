@@ -19,44 +19,21 @@ resource "azurerm_monitor_diagnostic_setting" "public_ip_diagnostics" {
   target_resource_id         = azurerm_public_ip.bastion_public_ip.id
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.logs.id
 
-  log {
+  enabled_log {
     category = "DDoSProtectionNotifications"
-    enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 
-  log {
+  enabled_log {
     category = "DDoSMitigationFlowLogs"
-    enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 
-  log {
+  enabled_log {
     category = "DDoSMitigationReports"
-    enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 
   metric {
     category = "AllMetrics"
     enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 }
 
@@ -87,23 +64,12 @@ resource "azurerm_monitor_diagnostic_setting" "bastion_diagnostics" {
   target_resource_id         = azurerm_bastion_host.bastion.id
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.logs.id
 
-  log {
+  enabled_log {
     category = "BastionAuditLogs"
-    enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 
   metric {
     category = "AllMetrics"
     enabled  = true
-
-    retention_policy {
-      enabled = true
-      days    = 365
-    }
   }
 }
